@@ -4,7 +4,7 @@
     require 'bdd.php'; //appel fichier, declaration
 
     $db=connexion();
-    $oeuvres=$db->query('SELECT * FROM Oeuvres ORDER BY id ASC');
+    $oeuvres=$db->query('SELECT * FROM Oeuvres ORDER BY id ASC'); // Attention: oeuvres comme écris dans myphpadmin dans ma base de données car c'est de là qu'on veut récupérer nos tableaux . d'où le sens de ne pas utiliser le tableau php .
     
 ?>
 <div id="liste-oeuvres">
