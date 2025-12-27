@@ -3,8 +3,8 @@
     //require 'oeuvres.php'; Comme demander on le retire
     require 'bdd.php'; //appel fichier, declaration
 
-    $bdd=connexion();
-    $oeuvres=$bdd->query('SELECT * FROM oeuvres ORDER BY id ASC ');
+    $db=connexion();
+    $oeuvres=$db->query('SELECT * FROM oeuvres ORDER BY id ASC');
     
 ?>
 <div id="liste-oeuvres">
