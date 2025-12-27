@@ -1,6 +1,11 @@
 <?php
     require 'header.php';
-    require 'oeuvres.php';
+    //require 'oeuvres.php'; Comme demander on le retire
+    require 'bdd.php'; //appel fichier, declaration
+
+    $db=connexion();
+    $oeuvres=$db->query('SELECT * FROM oeuvres ORDER BY id ASC ');
+    
 ?>
 <div id="liste-oeuvres">
     <?php foreach($oeuvres as $oeuvre): ?>
