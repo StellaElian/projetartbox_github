@@ -4,7 +4,7 @@
     require 'bdd.php'; //appel fichier, declaration
 
     $db=connexion();
-    $oeuvres=$db->query('SELECT * FROM oeuvres ORDER BY id ASC');
+    $oeuvres=$db->query('SELECT * FROM Oeuvres ORDER BY id ASC');
     
 ?>
 <div id="liste-oeuvres">
