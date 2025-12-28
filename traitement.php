@@ -1,4 +1,5 @@
 <?php
+require bdd.php ;
 
 if(empty($_POST['titre'])|| empty($_POST['artiste']) 
     || empty($_POST['description']) || empty($_POST['image']) 
@@ -10,10 +11,10 @@ if(empty($_POST['titre'])|| empty($_POST['artiste'])
 }
 else {
 
-    //titre= htmlspecialchars($_POST[titre]);
-    //artiste= htmlspecialchars($_POST[artiste]);
-    //description= htmlspecialchars($_POST[description]);
-    //image= htmlspecialchars($_POST[image]);
+    $titre= htmlspecialchars($_POST[titre]);
+    $artiste= htmlspecialchars($_POST[artiste]);
+    $description= htmlspecialchars($_POST[description]);
+    $image= htmlspecialchars($_POST[image]);
 }
 
 ?>
