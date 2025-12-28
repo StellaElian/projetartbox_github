@@ -1,0 +1,17 @@
+/* Partie Vérification du formulaire : 
+    -titre saisi, 
+    -artiste saisi
+    -description fait au moins 3 caractères
+    -Le lien vers l'image a bien un format URL */
+
+if(empty($_POST['titre'])||empty($_POST['artiste'])||empty($_POST['description'])||empty($_POST['image'])|| strlen($_POST['description'])<3 || filter_var($_POST['image'],FILTER_VALIDATE_URL)
+    )
+{
+    header('Location: ajouter.php');
+}else {
+
+    titre=htmlspecialchars($_POST[titre]);
+    artiste=htmlspecialchars($_POST[artiste]);
+    description=htmlspecialchars($_POST[description]);
+    image=htmlspecialchars($_POST[image]);
+}
