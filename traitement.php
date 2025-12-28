@@ -1,5 +1,5 @@
 <?php
-require bdd.php ;
+//require bdd.php ;
 
 if(empty($_POST['titre'])|| empty($_POST['artiste']) 
     || empty($_POST['description']) || empty($_POST['image']) 
