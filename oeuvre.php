@@ -2,8 +2,8 @@
     require 'header.php';
     //require 'oeuvres.php';
     require 'bdd.php';
-    $db=connexion();
-    $requete=$db->prepare('SElECT * FROM Oeuvres WHERE id = ?');
+    $bdd=connexion();
+    $requete=$bdd->prepare('SElECT * FROM oeuvres WHERE id = ?');
     // il faut un GET pour récupérer l'id que l'utilisateur a choisi
     $id= $_GET['id'];
     $requete->execute([$id]);
