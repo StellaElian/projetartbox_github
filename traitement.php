@@ -17,11 +17,11 @@ else {
 
     require bdd.php ;
     $db=connexion();
-    $requete=$db->prepare('INSERT INTO Oeuvres(titre,artiste,description,image)VALUES (?, ?, ?, ?)');
+    $requete=$db->prepare('INSERT INTO Oeuvres (titre,artiste,description,image)VALUES (?, ?, ?, ?)');
     $requete=execute([$titre, $artiste, $description, $image]); // renseigner les variables
 
     // Il faut rediriger l'utilisateur vers la page de la liste des oeuvres 
-    
+
 }
 
 ?>
