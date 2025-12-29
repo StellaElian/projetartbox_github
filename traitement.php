@@ -1,6 +1,6 @@
 <?php
 
-if(empty($_POST['titre'])|| empty($_POST['description'])
+if(empty($_POST['titre']) || empty($_POST['description'])
     || empty($_POST['artiste']) 
     || empty($_POST['image']) 
     || strlen($_POST['description']) < 3 
@@ -11,18 +11,18 @@ if(empty($_POST['titre'])|| empty($_POST['description'])
 }
 else {
 
-    $titre= htmlspecialchars($_POST[titre]);
-    $description= htmlspecialchars($_POST[description]);
-    $artiste= htmlspecialchars($_POST[artiste]);
-    $image= htmlspecialchars($_POST[image]);
+    $titre = htmlspecialchars($_POST[titre]);
+    $description = htmlspecialchars($_POST[description]);
+    $artiste = htmlspecialchars($_POST[artiste]);
+    $image = htmlspecialchars($_POST[image]);
 
     require 'bdd.php' ;
-    $bdd=connexion();
-    $requete=$bdd->prepare('INSERT INTO oeuvres (titre, description, artiste, image)VALUES (?, ?, ?, ?)');
-    $requete=execute([$titre, $description, $artiste,  $image]); // renseigner les variables
+    $bdd = connexion();
+    $requete = $bdd->prepare('INSERT INTO oeuvres (titre, description, artiste, image)VALUES (?, ?, ?, ?)');
+    $requete->execute([$titre, $description, $artiste,  $image]); // renseigner les variables
 
     // Il faut rediriger l'utilisateur vers la page de la liste des oeuvres 
-
+    header('Location: oeuvre.php' .bdd->lastInsertId());
 
 }
 
