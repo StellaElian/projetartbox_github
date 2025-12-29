@@ -22,7 +22,7 @@ else {
     $requete->execute([$titre, $description, $artiste,  $image]); // renseigner les variables
 
     // Il faut rediriger l'utilisateur vers la page de la liste des oeuvres 
-    header('Location: oeuvre.php' .bdd->lastInsertId());
+    header('Location: oeuvre.php?id=' . $bdd->lastInsertId());
 
 }
 
