@@ -11,12 +11,12 @@ if(empty($_POST['titre']) || empty($_POST['description'])
 }
 else {
 
-    $titre = htmlspecialchars($_POST[titre]);
-    $description = htmlspecialchars($_POST[description]);
-    $artiste = htmlspecialchars($_POST[artiste]);
-    $image = htmlspecialchars($_POST[image]);
+    $titre = htmlspecialchars($_POST['titre']);
+    $description = htmlspecialchars($_POST['description']);
+    $artiste = htmlspecialchars($_POST['artiste']);
+    $image = htmlspecialchars($_POST['image']);
 
-    require 'bdd.php' ;
+    include 'bdd.php' ;
     $bdd = connexion();
     $requete = $bdd->prepare('INSERT INTO oeuvres (titre, description, artiste, image)VALUES (?, ?, ?, ?)');
     $requete->execute([$titre, $description, $artiste,  $image]); // renseigner les variables
