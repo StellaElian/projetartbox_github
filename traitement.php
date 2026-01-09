@@ -6,7 +6,7 @@ if(empty($_POST['titre']) || empty($_POST['description']) || empty($_POST['artis
     || !filter_var($_POST['image'],FILTER_VALIDATE_URL)
     )
 {
-    header('Location: ajouter.php?erreur=true');
+    header('Location: ajouter.php?erreur=true ');
 }
 else {
 
